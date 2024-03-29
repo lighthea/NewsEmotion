@@ -2,46 +2,42 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
+| | Sallinen Alexandre|303162
 | | |
 | | |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
 ## Milestone 1 (29th March, 5pm)
+**Dataset**
 
-**10% of the final grade**
+For this project, I selected a dataset comprising newspaper headlines paired with their corresponding social media scores sourced from BuzzSumo[https://buzzsumo.com/]. This dataset contains articles headlines from the 10 most read US newspapers.
 
-This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
-Please, fill the following sections about your project.
+- The dataset needs to be cleaned to ensure UTF-8 format and removing links or other non alphanumeric data from the titles. Such data cleaning is vital for further processing as the text embeddings quality depend highly on it.
 
-*(max. 2000 characters per section)*
+- The choice of this dataset aligns with the course's focus on visualization but headlines need to be embedded using word2vec, TfIdf or Transformer based methods. I intend to highlight how much a title influences the success of a given article.
 
-### Dataset
+**Problematic**
 
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
->
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip).
+The core objective of this visualization project is to analyze and represent how different subjective characteristics of news headlines, such as positivity, negativity, bias, or strength, correlate with their performance on social media, measured through engagement scores provided by BuzzSumo (twitter, facebook, reddit). The objective is to discover whether certain emotional or stylistic attributes in news headlines significantly influence their ability to attract attention and engagement online.
 
-### Problematic
+The project targets a broad audience ranging from media professionals and marketers to academic researchers and the general public interested in media studies and communication. By presenting a clear and insightful visualization of the data, I aim to shed some light on the ways in which headline characteristics can shape news consumption in the digital landscape.
 
-> Frame the general topic of your visualization and the main axis that you want to develop.
-> - What am I trying to show with my visualization?
-> - Think of an overview for the project, your motivation, and the target audience.
+**Exploratory Data Analysis**
 
-### Exploratory Data Analysis
+I cleaned the data from non alpha numeeric tokens and prepared a visualisation pipeline. Initial statistics report :
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+- 99 572 non empty headlines collected from 2020 to 2021
+- An average length of 22 words
+- Each newsspaper source is equally represented in terms of number of article
+- The distribution of data samples according to engagements is exponential
 
-### Related work
+**Related work**
 
+Analysing news paper headline from a purely data centric point of view is a somewhat new method. Some early nlp papers analyse their emotions but never in correlation with the engagement produced.
+I disclose that I did work with similar data for private work for a french newspaper, even though no public/official reports were made the difference are as follow :
 
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
-
+- I did not have access to such a range of data nor did I use the words embeddings to compare the data, the work I did was much more rudimentary and used manually crafted dictionnaries to assign characteristics to words. This work will only work on unsupervised learning based methods and should display much more robust findings.
 ## Milestone 2 (26th April, 5pm)
 
 **10% of the final grade**
